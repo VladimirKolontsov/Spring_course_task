@@ -1,20 +1,24 @@
 package ru.kolontsov.springcourse.models;
 
+
 public class Person {
     private int id;
     private String name;
     private int age;
     private String email;
 
+    private String address;
+
     public Person() {
 
     }
 
-    public Person(int id, String name, int age, String email) {
+    public Person(int id, String name, int age, String email, String address) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.email = email;
+        this.address = address;
     }
 
     public int getId() {
@@ -49,4 +53,11 @@ public class Person {
         this.email = email;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
