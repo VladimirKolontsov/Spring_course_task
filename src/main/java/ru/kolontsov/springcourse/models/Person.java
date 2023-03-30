@@ -1,24 +1,29 @@
 package ru.kolontsov.springcourse.models;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "Person")
 public class Person {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "age")
     private int age;
-    private String email;
 
-    private String address;
+    @Column(name = "email")
+    private String email;
 
     public Person() {
 
     }
 
-    public Person(int id, String name, int age, String email, String address) {
-        this.id = id;
+    public Person(String name, int age) {
         this.name = name;
         this.age = age;
-        this.email = email;
-        this.address = address;
     }
 
     public int getId() {
@@ -51,13 +56,5 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 }
